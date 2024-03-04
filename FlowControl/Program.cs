@@ -9,7 +9,6 @@
             bool isProgramActive = true;
 
             //create instance of class
-
             TicketPriceCounter ticketPriceCounter = new TicketPriceCounter();
             Iteration iteration = new Iteration();
             ThirdWord thirdWord = new ThirdWord();
@@ -42,7 +41,7 @@
 
                     switch (input)
                     {
-                        case "X":
+                        case "0":
                             isProgramActive = false;
                             break;
                         case "1":
