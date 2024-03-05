@@ -13,7 +13,7 @@
             Iteration iteration = new Iteration();
             ThirdWord thirdWord = new ThirdWord();
 
-            // create itreation until user cllick "0" then  isProgramActive = false;
+            // create menu, 0 end program
             while (isProgramActive)
             {
                 //print menu
@@ -25,7 +25,7 @@
 
 
                 
-                //read input and simply validation
+                //read input and validation
 
 
                 string input = Console.ReadLine();

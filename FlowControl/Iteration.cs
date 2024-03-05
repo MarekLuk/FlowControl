@@ -11,7 +11,7 @@ namespace FlowControl
 
         public void RepeatTenTimes()
         {
-            Console.WriteLine("Input upprepa tio gånger");
+            Console.WriteLine("Ange input att upprepa tio gånger");
             string input = Console.ReadLine();
 
             //input validation

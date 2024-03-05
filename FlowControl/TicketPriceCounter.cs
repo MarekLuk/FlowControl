@@ -11,20 +11,35 @@ namespace FlowControl
     {
         public void CalculatePrice()
         {
-            Console.WriteLine("Antal personer:");
-
             int numberPerson;
-            //Parsing  input, 
-            bool successParse = int.TryParse(Console.ReadLine(), out numberPerson);
+            bool successParse;
 
-            //Check if parsing successful 
+            do
+            {
+                Console.WriteLine("Antal personer (max 10):");
 
-            if (!successParse || numberPerson < 1)
-            {
-                Console.WriteLine("Felaktig input,Ange ett giltigt antal personer ");
-            }
-            else
-            {
+
+                //Parsing  input
+                successParse = int.TryParse(Console.ReadLine(), out numberPerson);
+
+                //Input validation
+
+                if (!successParse || numberPerson < 1)
+                {
+                    Console.WriteLine("Felaktig input,Ange ett giltigt antal personer ");
+                    successParse = false;
+                }
+                else if (numberPerson > 10)
+                {
+                    Console.WriteLine("Max 10 personer");
+                    successParse = false;
+                }
+               
+
+            } while (!successParse);
+
+            
+       
                 int totalCost = 0;
 
                 for (int i = 0; i < numberPerson; i++)
@@ -47,7 +62,7 @@ namespace FlowControl
 
                     //checking age and define price
 
-                        if (age < 18)
+                        if (age < 18 && age >5)
                         {
                             Console.WriteLine("Ungdomspris: 80kr");
                             totalCost += 80;
@@ -78,7 +93,7 @@ namespace FlowControl
                     Console.WriteLine($"Antal personer: {numberPerson}");
                     Console.WriteLine($"Total kostnad : {totalCost}");
                 }
-            }
+            
         }
     }
 
